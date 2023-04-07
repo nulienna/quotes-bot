@@ -36,10 +36,10 @@ jobs:
           CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
           ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
-        run: python quotes.py
+        run: quotes.py
       - name: Save updated quotes.yml
         run: |
-          git remote add gh-token "https://github.com/danforth-restorative/MBR_Quotes.git"
+          git remote add gh-token "https://github.com/nulienna/quotes-bot.git"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --ff-only
