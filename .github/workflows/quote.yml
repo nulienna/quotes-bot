@@ -6,8 +6,7 @@ name: quotebot
 # events but only for the master branch
 on:
   schedule:
-    - cron:  '11 11 * * *'
-    - cron:  '22 19 * * *'
+    - cron:  '40 */2 * * *'
   push:
     paths:
     - 'quotes.py'
@@ -37,11 +36,11 @@ jobs:
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
           ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
         run: python quotes.py
-      - name: Save updated quotes.yml
-        run: |
-          git remote add gh-token "https://github.com/nulienna/quotes-bot.git"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git pull --ff-only
-          git commit -a -m "de-dupe"
-          git push gh-token main
+      #- name: Save updated quotes.yml
+      #  run: |
+      #    git remote add gh-token "https://github.com/nulienna/quotes-bot.git"
+      #    git config user.name "github-actions[bot]"
+      #    git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      #    git pull --ff-only
+      #    git commit -a -m "de-dupe"
+      #    git push gh-token main
