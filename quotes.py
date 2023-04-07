@@ -27,9 +27,9 @@ with open('quotes.yaml','r') as file:
     client.create_tweet(text=item)
     file.close()
 
-with open('quotes.yaml') as og, open("tmp", "w") as dest:
-    for line in og:
-        decoded_string = bytes(line, "utf-8").decode("unicode_escape") 
-        if item not in decoded_string:
-            dest.write(line)
-os.rename("tmp", "quotes.yaml")
+#with open('quotes.yaml') as og, open("tmp", "w") as dest:
+#    for line in og:
+#        decoded_string = bytes(line, "utf-8").decode("unicode_escape") 
+#        if item not in decoded_string:
+#            dest.write(line)
+#os.rename("tmp", "quotes.yaml")
