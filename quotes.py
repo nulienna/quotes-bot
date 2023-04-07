@@ -24,7 +24,7 @@ with open('quotes.yaml','r') as file:
     quotes = yaml.load(file, Loader=yaml.FullLoader)
     item = random.choice(quotes)
     print(item)
-    tweepy.Client.create_tweet(text=item)
+    tweepy.client.create_tweet(text=item)
     file.close()
 
 with open('quotes.yaml') as og, open("tmp", "w") as dest:
