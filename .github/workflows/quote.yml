@@ -36,7 +36,7 @@ jobs:
           CONSUMER_SECRET: ${{ secrets.CONSUMER_SECRET }}
           ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
           ACCESS_SECRET: ${{ secrets.ACCESS_SECRET }}
-        run: quotes.py
+        run: python quotes.py
       - name: Save updated quotes.yml
         run: |
           git remote add gh-token "https://github.com/nulienna/quotes-bot.git"
