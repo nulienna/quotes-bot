@@ -25,7 +25,7 @@ with open('quotes.yaml','r') as file:
     quotes = yaml.load(file, Loader=yaml.FullLoader)
     item = random.choice(quotes)
     print(item)
-    api.update_status(status=item, source=sourceLabel)
+    api.update_status(status=item)
     file.close()
 
 with open('quotes.yaml') as og, open("tmp", "w") as dest:
